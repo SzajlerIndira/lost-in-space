@@ -21,6 +21,15 @@ public class Planet {
 
     }
 
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "name='" + name + '\'' +
+                ", availableLandspace=" + availableLandspace +
+                ", totalLandspace=" + totalLandspace +
+                '}';
+    }
+
     public void setAvailableLandscape(int totalPropertySize) {
         this.availableLandspace=totalLandspace-totalPropertySize;
     }

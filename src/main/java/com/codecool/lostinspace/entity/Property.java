@@ -19,4 +19,14 @@ public class Property {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "id=" + id +
+                ", price=" + price +
+                ", size=" + size +
+                ", planet=" + planet +
+                '}';
+    }
 }

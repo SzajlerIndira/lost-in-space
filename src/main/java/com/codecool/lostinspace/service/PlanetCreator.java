@@ -35,4 +35,8 @@ public class PlanetCreator {
         return  planets;
     }
 
+    @Override
+    public String toString() {
+        return "PlanetCreator{}";
+    }
 }

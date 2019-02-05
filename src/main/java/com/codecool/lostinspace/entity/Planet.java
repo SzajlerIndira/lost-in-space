@@ -2,10 +2,10 @@ package com.codecool.lostinspace.entity;
 
 public class Planet {
     private String name;
-    private int availableLandspace;
-    private final int totalLandspace;
+    private double availableLandspace;
+    private final double totalLandspace;
 
-    public Planet(String name, int totalLandspace) {
+    public Planet(String name, Double totalLandspace) {
         this.name = name;
         this.totalLandspace = totalLandspace;
 

@@ -18,11 +18,12 @@ public class EntityDatabase {
         return planetNames;
     }
 
-    public int getTotalPropertySizePerPlanet(Planet planet){
-        int totalPropertySize = 0;
+    public double getTotalPropertySizePerPlanet(Planet planet){
+        double totalPropertySize = 0;
         for(Property property:properties){
             totalPropertySize += property.getSize();
 
         }
+        return totalPropertySize;
     }
 }

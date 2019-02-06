@@ -13,13 +13,13 @@ public class PlanetCreator {
     public static Map<String, Double> planetMap = new HashMap<>();
 
     public void putPlanetsToPlanetMap() {
+        planetMap.put("Mercury", (1748*Math.pow(10,5)));
         planetMap.put("Venus", (46*Math.pow(10,7)));
         planetMap.put("Mars", (145*Math.pow(10,6)));
+        planetMap.put("Jupiter", (622*Math.pow(10,8)));
         planetMap.put("Saturnus",(427*Math.pow(10,8)));
         planetMap.put("Uranus", (81*Math.pow(10,8)));
         planetMap.put("Neptunus", (764*Math.pow(10,7)));
-        planetMap.put("Jupiter", (622*Math.pow(10,8)));
-        planetMap.put("Mercury", (1748*Math.pow(10,5)));
         planetMap.put("Pluto", (178*Math.pow(10,5)));
 
     }

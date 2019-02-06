@@ -23,20 +23,21 @@ public class SpaceController {
         return "welcome";
     }
 
-
-
-
     @GetMapping("/list")
     public List<String> planetList() {
         entityDatabase.addPlanetList();
         return entityDatabase.getPlanets();
     }
 
+    @RequestMapping("/planet")
+    public String getForm(Model model){
+        return "planet";
+    }
 
-//    @PostMapping("/accomodation")
-//    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "greeting";
-//    }
+    @PostMapping("/<planet_name>")
+    public String getSize(@RequestParam(name="size", required=false) String name, Model model) {
+        model.addAttribute("name", name);
+        return "<planet name>";
+    }
 
 }

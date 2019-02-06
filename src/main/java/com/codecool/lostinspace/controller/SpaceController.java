@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
-@RestController
+@Controller
+//@RestController
 public class SpaceController {
 
     @Autowired
@@ -18,9 +18,14 @@ public class SpaceController {
 
 
     @RequestMapping("/")
-    public String welcome() {
-        return "welcome.html";
+    public String welcome(Model model) {
+        EntityDatabase entityDatabase = new EntityDatabase();
+        return "welcome";
     }
+
+
+
+
     @GetMapping("/list")
     public List<String> planetList() {
         entityDatabase.addPlanetList();

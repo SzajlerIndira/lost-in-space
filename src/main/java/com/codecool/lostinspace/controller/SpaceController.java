@@ -2,6 +2,7 @@ package com.codecool.lostinspace.controller;
 
 import com.codecool.lostinspace.entity.Planet;
 import com.codecool.lostinspace.service.EntityDatabase;
+import com.codecool.lostinspace.service.PlanetCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ public class SpaceController {
     @RequestMapping("/")
     public String welcome(Model model) {
         EntityDatabase entityDatabase = new EntityDatabase();
+        model.addAttribute("planets",PlanetCreator.planetMap);
         return "welcome";
     }
 

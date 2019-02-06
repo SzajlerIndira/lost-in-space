@@ -8,9 +8,13 @@ public class Planet {
     public Planet(String name, Double totalLandspace) {
         this.name = name;
         this.totalLandspace = totalLandspace;
+        this.availableLandspace = totalLandspace;
 
 
     }
+
+//    public Planet() {
+//    }
 
     public String getName() {
         return name;

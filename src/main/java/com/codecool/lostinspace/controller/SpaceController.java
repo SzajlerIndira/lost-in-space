@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Controller
+@RestController
 public class SpaceController {
 
     @Autowired
@@ -22,7 +22,8 @@ public class SpaceController {
         return "welcome.html";
     }
     @GetMapping("/list")
-    public List<String> planetList(){
+    public List<String> planetList() {
+        entityDatabase.addPlanetList();
         return entityDatabase.getPlanets();
     }
 

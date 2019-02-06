@@ -23,7 +23,7 @@ public class LostInSpaceApplication {
     }
     @PostConstruct
     public void afterInit(){
-        planetCreator.putPlanetsToPlanetMap();
+//        planetCreator.putPlanetsToPlanetMap();
         LOGGER.info(planetCreator.createPlanetList().toString());
     }
 }

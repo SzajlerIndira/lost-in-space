@@ -16,6 +16,9 @@ public class EntityDatabase {
     @Autowired
     private PlanetCreator planetCreator;
 
+    @Autowired
+    private PropertyCreator propertyCreator;
+
 
     public List<String> getPlanets() {
         List<String> planetNames = new ArrayList<>();
@@ -35,6 +38,11 @@ public class EntityDatabase {
     }
     public void addPlanetList(){
         planets = planetCreator.createPlanetList();
+    }
+
+    public  void addProperty(int price, int size, Planet planet){
+        Property property = propertyCreator.createProperty(price, size, planet);
+        properties.add(property);
     }
 
 }

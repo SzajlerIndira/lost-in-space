@@ -3,10 +3,12 @@ package com.codecool.lostinspace.service;
 import com.codecool.lostinspace.entity.Planet;
 import com.codecool.lostinspace.entity.Property;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class EntityDatabase {
     private List<Property> properties = new ArrayList<>();
     private List<Planet> planets = new ArrayList<>();

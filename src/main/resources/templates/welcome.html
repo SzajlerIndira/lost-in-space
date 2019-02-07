@@ -52,12 +52,12 @@
 
 </head>
 <body>
-<div th:replace="navbar.html :: copy"></div>
+<div class="jumbotron text-center" th:replace="navbar.html :: copy"></div>
 <h1>Welcome</h1>o
 <h2>Find your new home with us!</h2>
 <h4>Choose a planet</h4>
 
-<form action="/accomodation" method="post">
+<form action="/planet" method="post">
     <tr th:each= "planet:  ${planets}" >
         <td><input type="radio"   name="planet" th:text="${planet.getKey()} " required><br>
         </td>

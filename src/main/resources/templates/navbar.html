@@ -5,14 +5,15 @@
         crossorigin="anonymous"></script>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/resources/css/custom.css"/>
+    <link href="/static/css/custom.css" th:href="@{/css/custom.css}" type="text/css" rel="stylesheet">
 
     <meta charset="UTF-8">
     <title>Title</title>
     <nav th:fragment="copy" class="navbar navbar-expand-lg bg-primary">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar navbar-kebab"></span>
                 <span class="navbar-toggler-bar navbar-kebab"></span>
                 <span class="navbar-toggler-bar navbar-kebab"></span>

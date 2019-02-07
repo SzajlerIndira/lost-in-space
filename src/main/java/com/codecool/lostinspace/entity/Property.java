@@ -29,4 +29,8 @@ public class Property {
                 ", planet=" + planet +
                 '}';
     }
+
+    public Planet getPlanet() {
+        return this.planet;
+    }
 }

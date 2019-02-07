@@ -51,10 +51,12 @@ public class EntityDatabase {
     }
 
     public double getTotalPropertySizePerPlanet(Planet planet) {
+
         double totalPropertySize = 0;
         for (Property property : properties) {
-            totalPropertySize += property.getSize();
-
+            if (property.getPlanet() == planet) {
+                totalPropertySize += property.getSize();
+            }
         }
         return totalPropertySize;
     }

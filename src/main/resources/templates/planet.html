@@ -5,7 +5,7 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Codecool Shop - Cart</title>
+    <title>Lost-in-space planet</title>
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -29,83 +29,45 @@
 
 
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
-    <script type="text/javascript" th:src="@{/static/js/the_js.js}" defer></script>
+    <!--<script type="text/javascript" th:src="@{/static/js/the_js.js}" defer></script> -->
 </head>
 
 <body>
 
 <div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
+    <h1>Lost-in-space</h1>
 
-    <h2>Payment</h2>
+    <h2>Buy territory</h2>
 </div>
 
 <div class="container">
-    <div class="well well-sm">
-        <strong id="total-payment">Total:</strong>
-    </div>
 
     <div class="well well-sm">
-        <strong>Choose payment:</strong>
+        <strong>Please provide the size of the territory you are willing to buy:</strong>
+        <p>Max available territory: </p>
     </div>
-    <form action="/payment" >
-        <input type="radio" name="payment-choice" value="credit-card">Credit card<br>
-        <input type="radio" name="payment-choice" value="paypal"> Paypal<br>
-        <input class="btn btn-success" type="submit" value="Submit">
-    </form>
+    <form action="/planet" method="post">
+    <div>
+        <p>Territory size:</p>
+        <input type="text" name="size" required>
+        <br>
+        <input type="submit" class="btn btn-success" value="size">
+    </div>
 
-
-    <div th:switch="${paymentChoice}" >
+    <!--<div th:switch="${paymentChoice}" >
         <div  th:case = "${'credit-card'}">
             <br>
-            <div class="well well-sm">
-                <strong>Please provide credit card information:</strong>
-            </div>
-        <form action="/payment" method="post">
-            <div>
-                <p>Card number:</p>
-                <input type="text" name="card-number" required>
-            </div>
-            <div>
-                <p>card holder:</p>
-                <input type="text" name="card-holder" required>
-            </div>
-            <div>
-                <p>Expiry date</p>
-                <input type="text" name="expiry-date" required>
-            </div>
-            <div>
-                <p>Code</p>
-                <input type="text" name="code" required>
-            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                </div>
 
-            <input class="btn btn-success"  id ="pay" name="credit-card" type="submit" value="Payment">
-        </form>
-    </div>
-        <div  th:case = "${'paypal'}">
-            <br>
-            <div class="well well-sm">
-                <strong>Please provide :</strong>
             </div>
-        <form action="/payment" method="post">
-            <div>
-                <p>Username:</p>
-                <input type="text" name="username" required>
-            </div>
-            <div>
-                <p>password:</p>
-                <input type="text" name="password" required>
-            </div>
-
-            <input class="btn btn-success"  id ="pay" name="paypal" type="submit" value="Payment">
-        </form>
         </div>
-    </div>
-
+    </div>-->
+    </form>
 </div>
 
 <br>
-
-<div th:replace="footer.html :: copy"></div>
 </body>
 </html>

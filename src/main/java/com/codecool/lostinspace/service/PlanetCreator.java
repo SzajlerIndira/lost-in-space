@@ -25,15 +25,14 @@ public class PlanetCreator {
     }
 
 
-    public List<Planet> createPlanetList() {
+    public void createPlanetList() {
         putPlanetsToPlanetMap();
         List<Planet> planets = new ArrayList<>();
         for (Map.Entry<String, Double> entry: planetMap.entrySet()) {
            Planet planet = new  Planet(entry.getKey(), entry.getValue());
            planets.add(planet);
         }
-        return  planets;
-    }
+        EntityDatabase.getInstance().addPlanetList(planets);    }
 
     @Override
     public String toString() {

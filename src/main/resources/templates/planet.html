@@ -1,70 +1,68 @@
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Codecool" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
 
-    <title>Lost-in-space planet</title>
-    <!-- Font Awesome Icon -->
+<head th:fragment="header">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        Lost in space
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+
+    <link href="/static/css/material-dashboard.css" rel="stylesheet">
+    <link href="/static/css/demo.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
-    <!-- Latest compiled and minified Jquery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous" />
-
-    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 
-
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
-    <!--<script type="text/javascript" th:src="@{/static/js/the_js.js}" defer></script> -->
 </head>
-
 <body>
+
 
 <div class="jumbotron text-center">
     <h1>Lost-in-space</h1>
 
-    <h2>Buy territory</h2>
+    <h2 th:text="'Buy terrytory on ' +${planetName} "></h2>
 </div>
 
 <div class="container">
 
     <div class="well well-sm">
         <strong>Please provide the size of the territory you are willing to buy:</strong>
-        <p>Max available territory: </p>
+        <p th:text="'Max available territory: '+ ${availableTerritory} +' km2'"></p>
     </div>
     <form action="/planet" method="post">
-    <div>
-        <p>Territory size:</p>
-        <input type="text" name="size" required>
-        <br>
-        <input type="submit" class="btn btn-success" value="size">
-    </div>
-
-    <!--<div th:switch="${paymentChoice}" >
-        <div  th:case = "${'credit-card'}">
+        <div>
+            <p>Territory size:</p>
+            <input type="text" name="size" required>
             <br>
-            <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
-                </div>
-
-            </div>
+            <input type="submit" class="btn btn-success" value="size">
         </div>
-    </div>-->
+
+        <!--<div th:switch="${paymentChoice}" >
+            <div  th:case = "${'credit-card'}">
+                <br>
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>-->
     </form>
 </div>
 

@@ -1,9 +1,12 @@
 package com.codecool.lostinspace.entity;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class Planet {
     private String name;
     private double availableLandspace;
-    private final double totalLandspace;
+    private double totalLandspace;
 
     public Planet(String name, Double totalLandspace) {
         this.name = name;
@@ -13,8 +16,8 @@ public class Planet {
 
     }
 
-//    public Planet() {
-//    }
+    public Planet() {
+    }
 
     public String getName() {
         return name;
@@ -23,6 +26,10 @@ public class Planet {
     public void reduceAvailableLandspace(int sizeToRemove) {
         availableLandspace -= sizeToRemove;
 
+    }
+
+    public int getAvailableLandspace() {
+        return (int) availableLandspace;
     }
 
     @Override

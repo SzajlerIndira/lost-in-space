@@ -30,6 +30,10 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
                 crossorigin="anonymous"></script>
         <link href="/static/css/custom.css" th:href="@{/css/custom.css}" type="text/css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+              id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
     </head>
@@ -39,13 +43,16 @@
 <h2>Find your new home with us!</h2>
 <h4>Choose a planet</h4>
 
+
 <form action="/planet" method="get">
     <tr th:each="planet:  ${planets}">
         <td><input type="radio" name="planet" th:text="${planet} " th:value="${planet}" required><br>
         </td>
     </tr>
-    <input type="submit" value="Submit">
+    <br>
+    <input type="submit" class="btn btn-outline-success btn-lg btn-block" value="Submit">
 </form>
+
 
 <div th:replace="footer.html :: copy"></div>
 

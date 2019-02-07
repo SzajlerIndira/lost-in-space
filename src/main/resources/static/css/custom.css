@@ -15,4 +15,15 @@ h2 {
     background-color: #F1F1F1;
     text-align: center;
     padding: 10px;
+    position: fixed;
+    left: 0;
+}
+
+body {
+    /*background: #43cea2;*/
+    /*background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);*/
+    /*background: linear-gradient(to top, #185a9d, #43cea2);*/
+    /*color: #fff;*/
+    background: orchid;
+    text-align: center;
 }
